@@ -25,7 +25,7 @@ Project Vaayu started as a simple login and registration logic code and has sinc
 
 ### Prerequisites
 
-- PHP (version 8.2.0)
+- PHP (version 8.2.0 or more)
 - MySQL database
 - Web server (Apache)
 
