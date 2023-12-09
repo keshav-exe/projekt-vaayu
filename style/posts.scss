@@ -1,0 +1,160 @@
+:root {
+  --primary-color: #00ad6e;
+  --secondary-color: #c8f7e8;
+  --white: #feffff;
+}
+
+.posts {
+  width: 100%;
+  height: 500px;
+}
+
+.card {
+  width: 480px;
+  background-color: var(--primary-color);
+  background: linear-gradient(145deg, #b4ded1, #d6fff8);
+  box-shadow: 11px 11px 22px #c2f0e1,
+    -11px -11px 22px #cefeef;
+  color: var(--primary-color);
+  position: relative;
+  border-radius: 1em;
+  padding: 2em;
+  transition: transform 0.4s ease;
+  height: 240px;
+  margin: 16px;
+
+}
+
+.wrap {
+  width: auto;
+  margin: 6em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5em;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.card .card-top,
+.card .card-bottom {
+  display: flex;
+  justify-content: space-between;
+  color: var(--primary-color);
+}
+
+.card .card-top p,
+.card .card-top .card-title,
+.card .card-bottom p,
+.card .card-bottom .card-title {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.card .card-title {
+  font-weight: bold;
+}
+
+.card .card-top p,
+.card .card-bottom p {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.card .card-bottom {
+  align-items: flex-end;
+  color: var(--primary-color);
+}
+
+.card .card-text {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  top: 0;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: transform 0.4s ease;
+  text-align: left;
+  white-space: wrap;
+  overflow: hidden;
+}
+
+
+// .card .card-text svg {
+//   width: 4em;
+//   height: 4em;
+// }
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(0.97);
+}
+
+.card:hover .card-content {
+  transform: scale(0.96);
+}
+
+// .card:hover .card-text svg {
+//   transform: scale(1.05);
+// }
+
+.card:active {
+  transform: scale(0.9);
+}
+
+.wrap .card:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.wrap:hover>.card:not(:hover) {
+  transform: scale(0.9, 0.9);
+}
+
+.new-post {
+  position: fixed;
+  right: 6em;
+  bottom: 4em;
+  color: var(--secondary-color);
+  background: linear-gradient(145deg, #009c63, #00b976);
+  font-size: 1.5em;
+  border-radius: 0.5em;
+  padding: 0.5em;
+
+  :hover {
+    transform: rotate(-90deg);
+  }
+}
+
+.deletePost {
+  cursor: pointer;
+  margin: 0;
+  margin-top: 1em;
+  padding: 0.65em 0.85em;
+  font-weight: 550;
+  font-size: 1.25em;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
