@@ -34,7 +34,7 @@ Project Vaayu started as a simple login and registration logic code and has sinc
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/project-vaayu.git
+   git clone https://github.com/keshav-exe/project-vaayu.git
    ```
 
 2. Configure the database settings:
