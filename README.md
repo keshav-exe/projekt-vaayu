@@ -2,7 +2,7 @@
 
 ## Overview
 
-Project Vaayu started as a simple login and registration logic code and has since evolved into a comprehensive journal web application. Created and being maintained by **Keshav Bagaade**, this solo personal project, currently under development, is designed to provide users with a platform to capture their thoughts, reflections, and experiences in a secure and organized manner. Built using HTML, SASS, PHP, and JavaScript, Project Vaayu strives to offer a user-friendly interface, smooth transitions, and robust functionality, making journaling a delightful experience.
+Project Vaayu started as a simple login and registration logic code and has since evolved into a comprehensive journal web application. This solo personal project, currently under development, is designed to provide users with a platform to capture their thoughts, reflections, and experiences in a secure and organized manner. Built using HTML, SASS, PHP, and JavaScript, Project Vaayu strives to offer a user-friendly interface, smooth transitions, and robust functionality, making journaling a delightful experience.
 
 ## Features
 
