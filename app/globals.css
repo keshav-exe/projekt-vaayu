@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 195 50% 95%;
+    --foreground: 195 100% 45%;
+    --primary: 195 50% 4%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 195 50% 4%;
+    --foreground: 195 100% 45%;
+    --primary: 195 50% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+@layer utilities {
+  .wrapper {
+    @apply max-w-7xl lg:mx-auto py-5 px-5 md:px-12 w-full;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d5e2e7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9dc9db;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #18212a;
+  background: #f5f9ff;
+}
+
+::selection {
+  color: #18212a;
+  background: #f5f9ff;
+}
