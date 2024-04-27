@@ -18,7 +18,7 @@ export const dynamic = "force-dynamic";
 interface DocumentListProps {
   parentDocumentId?: Id<"documents">;
   level?: number;
-  data?: Doc<"documents">[];
+  data?: Doc<"documents">;
 }
 
 const Page = ({ level = 0 }: DocumentListProps) => {
@@ -43,57 +43,6 @@ const Page = ({ level = 0 }: DocumentListProps) => {
     <>
       <div className="wrapper">
         <div className="overflow-y-auto w-full rounded-md transition-all duration-300 ">
-          {/* <div className="flex items-center justify-between p-8 md:p-16 rounded-xl bg-primary/5">
-            <div className="flex flex-col md:w-[50%] gap-4">
-              <h1 className="text-3xl md:text-4xl font-bold">
-                Welcome to Vaayu Mandal!
-              </h1>
-              <p className="font-medium">
-                In this ethereal space, you'll find a collection of public notes
-                shared. Whether you seek inspiration, information, or simply a
-                moment of contemplation, let the currents of Vaayu Mandal guide
-                you on your journey.
-              </p>
-              {!isAuthenticated ? (
-                <div>
-                  <SignUpButton mode="modal">
-                    <Button className="gap-2">
-                      Join Vaayu For Free
-                      <ArrowRight className="size-5" />
-                    </Button>
-                  </SignUpButton>
-                </div>
-              ) : (
-                <Link href="/kosh">
-                  <Button className="gap-2 text-lg p-6">
-                    Share Your Lekhaah
-                    <ArrowRight className="size-5" />
-                  </Button>
-                </Link>
-              )}
-            </div>
-            <svg
-              viewBox="0 0 1381 1243"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-primary hidden md:block w-[50%] size-80"
-            >
-              <circle
-                cx="899.5"
-                cy="481.5"
-                r="473.5"
-                stroke="currentColor"
-                stroke-width="16"
-              />
-              <circle
-                cx="481.5"
-                cy="761.5"
-                r="473.5"
-                stroke="currentColor"
-                stroke-width="16"
-              />
-            </svg>
-          </div> */}
           <div className="h-[60vh] w-full bg-background flex flex-col items-center justify-center overflow-hidden rounded-md">
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
