@@ -15,13 +15,7 @@ import { animate, easeInOut, motion } from "framer-motion";
 
 export const dynamic = "force-dynamic";
 
-interface DocumentListProps {
-  parentDocumentId?: Id<"documents">;
-  level?: number;
-  data?: Doc<"documents">;
-}
-
-const Page = ({ level = 0 }: DocumentListProps) => {
+const Page = () => {
   const router = useRouter();
   const { isAuthenticated } = useConvexAuth();
 
