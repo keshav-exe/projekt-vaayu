@@ -3,6 +3,7 @@
 import React from "react";
 import { BlockNoteEditor, PartialBlock } from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
+
 import "@blocknote/core/style.css";
 import { useTheme } from "next-themes";
 import { useEdgeStore } from "@/lib/edgestore";
@@ -23,7 +24,7 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
     });
     return response.url;
   };
-
+  //@ts-ignore
   const editor: BlockNoteEditor = useBlockNote({
     editable,
     initialContent: initialContent ? JSON.parse(initialContent) : undefined,
@@ -37,6 +38,7 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
     <>
       <BlockNoteView
         className="rounded-2xl"
+        //@ts-ignore
         editor={editor}
         theme={resolvedTheme === "dark" ? "dark" : "light"}
         onChange={(editor: any) => {
