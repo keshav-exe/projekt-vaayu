@@ -10,8 +10,8 @@ import Spinner from "@/components/spinner";
 const manrope = Manrope({ subsets: ["latin"] });
 
 import type { Metadata } from "next";
-
 export const metadata: Metadata = {
+  manifest: "/manifest.json",
   title: "Vaayu",
   description: "A clean asf & secure note sharing app.",
   other: {
