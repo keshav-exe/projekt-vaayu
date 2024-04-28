@@ -49,8 +49,8 @@ const Navbar = () => {
                 y2="512"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0.455" stop-color="#060C0F" />
-                <stop offset="1.0001" stop-color="#0D2026" />
+                <stop offset="0.455" stopColor="#060C0F" />
+                <stop offset="1.0001" stopColor="#0D2026" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear_132_3"
@@ -60,8 +60,8 @@ const Navbar = () => {
                 y2="533.4"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#00BFFF" />
-                <stop offset="0.7" stop-color="#ECF5F9" />
+                <stop stopColor="#00BFFF" />
+                <stop offset="0.7" stopColor="#ECF5F9" />
               </linearGradient>
             </defs>
           </svg>
@@ -76,10 +76,10 @@ const Navbar = () => {
           {!isAuthenticated && !isLoading && (
             <div className="flex gap-5">
               <Button variant={"outline"} className="h-10">
-                <SignInButton>Sign in</SignInButton>
+                <SignInButton redirectUrl="/">Sign in</SignInButton>
               </Button>
               <Button variant={"default"} className="h-10">
-                <SignUpButton>Join for Free</SignUpButton>
+                <SignUpButton redirectUrl="/">Join for Free</SignUpButton>
               </Button>
               <ThemeSwitch />
             </div>
@@ -96,7 +96,7 @@ const Navbar = () => {
                   </Avatar>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
-                  className="w-[16vw] mx-2 p-4 flex flex-col gap-4"
+                  className="w-[50vw] md:w-[16vw] mx-2 p-4 flex flex-col gap-4"
                   align="end"
                 >
                   <div className="flex items-center w-full justify-between ">
