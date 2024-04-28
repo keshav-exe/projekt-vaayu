@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   images: {
     domains: ["files.edgestore.dev", "utfs.io", "ap-south-1.graphassets.com"],
@@ -6,4 +7,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-np;
