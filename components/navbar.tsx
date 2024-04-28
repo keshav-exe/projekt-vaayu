@@ -20,8 +20,6 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Label } from "@/components/ui/label";
 import ThemeToggle from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
-import { DotsHorizontalIcon } from "@radix-ui/react-icons";
-import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
 
 const Navbar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -78,10 +76,10 @@ const Navbar = () => {
           {!isAuthenticated && !isLoading && (
             <div className="flex gap-5">
               <Button variant={"outline"} className="h-10">
-                <SignInButton mode="modal">Sign in</SignInButton>
+                <SignInButton>Sign in</SignInButton>
               </Button>
               <Button variant={"default"} className="h-10">
-                <SignUpButton mode="modal">Join for Free</SignUpButton>
+                <SignUpButton>Join for Free</SignUpButton>
               </Button>
               <ThemeSwitch />
             </div>
