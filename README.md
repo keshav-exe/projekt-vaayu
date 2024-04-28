@@ -1,4 +1,4 @@
-# Vaayu: Your Creative Sanctuary
+# Projekt Vaayu
 
 ![Vaayu Logo](https://utfs.io/f/1066f37a-db10-4411-8c2d-276c1c868ad7-5nw9l7.png)
 
