@@ -7,16 +7,7 @@ import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import Item from "./item";
 import { toast } from "sonner";
-import {
-  Home,
-  LogOut,
-  MenuIcon,
-  PlusSquare,
-  Search,
-  Trash2,
-  User,
-  X,
-} from "lucide-react";
+import { LogOut, MenuIcon, PlusSquare, Search, Trash2, X } from "lucide-react";
 import {
   Popover,
   PopoverContent,
@@ -24,15 +15,9 @@ import {
 } from "@/components/ui/popover";
 import TrashBox from "./trashbox";
 import { useSearch } from "@/hooks/use-search";
-import { useSettings } from "@/hooks/use-settings";
 import Navbar from "./navbar";
 import { Button } from "@/components/ui/button";
-import {
-  SignOutButton,
-  UserButton,
-  UserProfile,
-  useUser,
-} from "@clerk/clerk-react";
+import { SignOutButton, useUser } from "@clerk/clerk-react";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { Label } from "@/components/ui/label";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -161,7 +146,8 @@ const Navigation = () => {
           isMobile && "w-0"
         )}
       >
-        <div className="p-2 flex flex-col gap-2 size-full justify-between">
+        <div className="p-2 flex flex-col gap-2 size-full justify-evenly">
+          {/* Header */}
           <div className="flex justify-between px-2 py-3 ">
             <div className="flex gap-3">
               <Link href={"/"} className="">
@@ -217,6 +203,7 @@ const Navigation = () => {
               </Button>
             )}
           </div>
+          {/* Nav Elements */}
           <div className="grid grid-cols-2 m-1 gap-2 grid-2">
             <div className="py-2 px-3 w-full col-span-2 rounded-md bg-foreground/5 hover:bg-foreground/10 cursor-pointer transition-all duration-300 justify-between">
               <Item
@@ -282,10 +269,10 @@ const Navigation = () => {
               </PopoverContent>
             </Popover>
           </div>
-
           <div
             onMouseDown={handleMouseDown}
             onClick={resetWidth}
+            onDoubleClick={collapse}
             className="opacity-0 group-hover/sidebar:opacity-100 transition-all cursor-ew-resize absolute h-full w-1 bg-primary/15 shadow-md right-0 top-0"
           />
         </div>

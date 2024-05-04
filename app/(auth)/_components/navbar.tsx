@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import Banner from "./banner";
 import Menu from "./menu";
 import Publish from "./publish";
-import { useMediaQuery } from "usehooks-ts";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface NavbarProps {
@@ -41,7 +40,7 @@ const Navbar = ({ isCollapsed, onResetWidth, onCollapse }: NavbarProps) => {
   return (
     <>
       {document?.isArchived && <Banner documentId={document?._id} />}
-      <nav className="bg-background/60 backdrop-blur-sm shadow-md wrapper my-2 rounded-xl border-2 border-primary/20 items-center flex gap-4">
+      <nav className="bg-background/60 backdrop-blur-sm shadow-md wrapper my-2 rounded-full border-2 border-primary/10 items-center flex gap-4">
         <Button
           onClick={isCollapsed ? onResetWidth : onCollapse}
           role="button"

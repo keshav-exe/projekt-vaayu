@@ -58,7 +58,11 @@ const Page = ({ params }: DocumentIdPageProps) => {
       <Cover url={document.coverImage} />
       <div className="wrapper">
         <Toolbar initialData={document} />
-        <Editor onChange={onChange} initialContent={document.content} />
+        <Editor
+          onChange={onChange}
+          initialContent={document.content}
+          data-theming-css
+        />
       </div>
     </div>
   );

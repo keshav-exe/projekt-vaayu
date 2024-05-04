@@ -1,18 +1,13 @@
 "use client";
 import Cover from "@/components/cover";
-import Editor from "@/components/editor";
 import { Skeleton } from "@/components/ui/skeleton";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { useMutation, useQuery } from "convex/react";
-import { useParams } from "next/navigation";
 import dynamic from "next/dynamic";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import Toolbar from "@/app/(auth)/_components/toolbar";
-import { Button } from "@/components/ui/button";
-import { Check, Copy } from "lucide-react";
 import { useUser } from "@clerk/clerk-react";
-import Navbar from "@/components/navbar";
 
 interface DocumentIdPageProps {
   params: {
@@ -64,7 +59,8 @@ const Page = ({ params }: DocumentIdPageProps) => {
   return (
     <>
       <Cover preview url={document.coverImage} />
-      <div className="wrapper bg-[#ffffff] dark:bg-[#1f1f1f]">
+
+      <div className="wrapper bg-[#ffffff] dark:bg-[#1f1f1f] shadow-xl rounded-xl my-10">
         <div className="flex flex-col">
           <Toolbar preview initialData={document} />
         </div>
@@ -72,6 +68,7 @@ const Page = ({ params }: DocumentIdPageProps) => {
           editable={false}
           onChange={onChange}
           initialContent={document.content}
+          data-theming-css
         />
       </div>
     </>

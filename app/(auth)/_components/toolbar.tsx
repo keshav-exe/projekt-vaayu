@@ -2,12 +2,11 @@
 import IconPicker from "@/components/icon-picker";
 import { Button } from "@/components/ui/button";
 import { api } from "@/convex/_generated/api";
-import { Doc, Id } from "@/convex/_generated/dataModel";
-import { update } from "@/convex/documents";
+import { Doc } from "@/convex/_generated/dataModel";
 import { useCoverImage } from "@/hooks/use-cover-image";
 import { useOrigin } from "@/hooks/use-origin";
 import { useMutation } from "convex/react";
-import { Check, Copy, ImageIcon, Share, Smile, X } from "lucide-react";
+import { Check, ImageIcon, Share, Smile, X } from "lucide-react";
 import React, { ElementRef, useRef, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 
