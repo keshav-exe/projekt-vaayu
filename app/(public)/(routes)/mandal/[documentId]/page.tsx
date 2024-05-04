@@ -67,9 +67,6 @@ const Page = ({ params }: DocumentIdPageProps) => {
       <div className="wrapper bg-[#ffffff] dark:bg-[#1f1f1f]">
         <div className="flex flex-col">
           <Toolbar preview initialData={document} />
-          <p className="lg:mx-auto px-5 py- md:px-12 w-full">
-            By: {document.userName}
-          </p>
         </div>
         <Editor
           editable={false}

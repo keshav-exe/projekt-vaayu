@@ -11,18 +11,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Spinner from "@/components/spinner";
 import { SparklesCore } from "@/components/ui/sparkles";
-import { animate, easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const dynamic = "force-dynamic";
 
 const Page = () => {
-  const router = useRouter();
-  const { isAuthenticated } = useConvexAuth();
-
-  const onRedirect = (documentId: string) => {
-    router.push(`/mandal/${documentId}`);
-  };
-
   const documents = useQuery(api.documents.getPublishedDocuments);
 
   if (documents === undefined) {
@@ -53,7 +46,6 @@ const Page = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{
-                delay: 0.25,
                 duration: 1,
                 ease: [0.22, 0.5, 0.36, 1],
               }}
@@ -82,7 +74,7 @@ const Page = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{
-                delay: 1.5,
+                delay: 0.5,
                 duration: 1,
                 ease: [0.22, 0.5, 0.36, 1],
               }}
@@ -97,23 +89,24 @@ const Page = () => {
           </div>
 
           <div className="my-10 flex flex-col gap-6">
-            <h2 className="text-4xl  text-center">Public Lekaah</h2>
             <Suspense fallback={<Spinner />}>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 overflow-hidden">
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 1,
+                  ease: [0.22, 0.5, 0.36, 1],
+                  delay: 1,
+                }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 overflow-hidden"
+              >
                 {documents
                   .sort((a, b) => b._creationTime - a._creationTime)
                   .map((document) => (
-                    <motion.div
-                      initial={{ y: 20, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{
-                        duration: 0.5,
-                        ease: easeInOut,
-                      }}
-                      // viewport={{ margin: "-75px" }}
+                    <Link
+                      href={`/mandal/${document._id}`}
                       key={document._id}
                       className="cursor-pointer justify-between bg-foreground/5 hover:bg-foreground/10 transition-all duration-300 rounded-xl flex p-4"
-                      onClick={() => onRedirect(document._id)}
                     >
                       <div className="flex flex-col gap-3">
                         {document.icon ? (
@@ -130,9 +123,9 @@ const Page = () => {
                       </div>
 
                       <ArrowUpRight className="size-6" />
-                    </motion.div>
+                    </Link>
                   ))}
-              </div>
+              </motion.div>
             </Suspense>
           </div>
         </div>

@@ -4,9 +4,11 @@ import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 
 export const ContainerScroll = ({
   titleComponent,
+  footerComponent,
   children,
 }: {
   titleComponent: string | React.ReactNode;
+  footerComponent: string | React.ReactNode;
   children: React.ReactNode;
 }) => {
   const containerRef = useRef<any>(null);
@@ -36,11 +38,11 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="h-[45rem] md:h-[60rem] flex items-center justify-center relative p-0 md:p-10"
+      className="h-[45rem] md:h-[60rem] flex items-center justify-center relative p-10"
       ref={containerRef}
     >
       <div
-        className="py-10 md:py-40 w-full relative"
+        className="py-10 w-full relative"
         style={{
           perspective: "1000px",
         }}
@@ -49,6 +51,7 @@ export const ContainerScroll = ({
         <Card rotate={rotate} translate={translate} scale={scale}>
           {children}
         </Card>
+        <Footer footerComponent={footerComponent} />
       </div>
     </div>
   );
@@ -60,9 +63,17 @@ export const Header = ({ translate, titleComponent }: any) => {
       style={{
         translateY: translate,
       }}
-      className="div max-w-5xl mx-auto text-center"
+      className="div max-w-5xl mx-auto text-center transition-all duration-300"
     >
       {titleComponent}
+    </motion.div>
+  );
+};
+
+export const Footer = ({ footerComponent }: any) => {
+  return (
+    <motion.div className="div max-w-5xl mx-auto mt-10 text-center transition-all duration-300">
+      {footerComponent}
     </motion.div>
   );
 };
@@ -85,9 +96,9 @@ export const Card = ({
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
+      className="max-w-4xl -mt-16 mx-auto h-[30rem] md:h-[35rem] w-full border-4 border-[#181818] p-2 md:p-4 bg-[#141414] rounded-[30px] shadow-2xl transition-all duration-300"
     >
-      <div className=" h-full w-full  overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4 ">
+      <div className=" h-full w-full overflow-hidden rounded-2xl  md:rounded-2xl ">
         {children}
       </div>
     </motion.div>
