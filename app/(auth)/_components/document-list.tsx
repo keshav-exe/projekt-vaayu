@@ -64,7 +64,7 @@ const DocumentList = ({ parentDocumentId, level = 0 }: DocumentListProps) => {
           level === 0 && "hidden"
         )}
       >
-        VaayuKosh is empty!
+        Nothing found!
       </p>
       {documents.map((document) => (
         <div key={document._id} className="px-2 py-1 cursor-pointer">

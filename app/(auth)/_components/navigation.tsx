@@ -7,7 +7,15 @@ import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import Item from "./item";
 import { toast } from "sonner";
-import { LogOut, MenuIcon, PlusSquare, Search, Trash2, X } from "lucide-react";
+import {
+  Globe,
+  LogOut,
+  MenuIcon,
+  PlusSquare,
+  Search,
+  Trash2,
+  X,
+} from "lucide-react";
 import {
   Popover,
   PopoverContent,
@@ -33,14 +41,11 @@ import DocumentList from "./document-list";
 const Navigation = () => {
   const pathname = usePathname();
   const params = useParams();
-
   const isMobile = useMediaQuery("(max-width:768px)");
   const create = useMutation(api.documents.create);
   const { user } = useUser();
   const search = useSearch();
-
   const router = useRouter();
-
   const isResizingRef = useRef(false);
   const sidebarRef = useRef<ElementRef<"aside">>(null);
   const navbarRef = useRef<ElementRef<"div">>(null);
@@ -60,40 +65,6 @@ const Navigation = () => {
       collapse();
     }
   }, [pathname, isMobile]);
-
-  const handleMouseDown = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
-    event.preventDefault();
-    event.stopPropagation();
-
-    isResizingRef.current = true;
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-  };
-
-  const handleMouseMove = (e: MouseEvent) => {
-    if (!isResizingRef.current) return;
-    let newWidth = e.clientX;
-
-    if (newWidth < 320) newWidth = 320;
-    if (newWidth > 480) newWidth = 480;
-
-    if (sidebarRef.current && navbarRef.current) {
-      sidebarRef.current.style.width = `${newWidth}px`;
-      navbarRef.current.style.setProperty("left", `${newWidth}px`);
-      navbarRef.current.style.setProperty(
-        "width",
-        `calc(100% - ${newWidth}px)`
-      );
-    }
-  };
-
-  const handleMouseUp = () => {
-    isResizingRef.current = false;
-    document.removeEventListener("mousemove", handleMouseMove);
-    document.removeEventListener("mouseup", handleMouseUp);
-  };
 
   const resetWidth = () => {
     if (sidebarRef.current && navbarRef.current) {
@@ -141,7 +112,7 @@ const Navigation = () => {
       <aside
         ref={sidebarRef}
         className={cn(
-          "group/sidebar h-full bg-background text-primary overflow-y-auto overflow-x-hidden relative flex w-80 flex-col z-[99999] shadow-xl dark:shadow-none",
+          "h-full bg-background text-primary overflow-y-auto overflow-x-hidden relative flex w-80 flex-col z-[99999] shadow-xl dark:shadow-none",
           isResetting && "transition-all ease-in-out duration-300",
           isMobile && "w-0"
         )}
@@ -234,6 +205,12 @@ const Navigation = () => {
             <div className="h-[64vh] py-3 overflow-y-auto w-full col-span-2 rounded-md bg-foreground/5 transition-all duration-300 ">
               <DocumentList />
             </div>
+            <Link href="/mandal" className="col-span-2">
+              <div className="flex py-4 px-3 w-full col-span-2 rounded-md bg-foreground/5 hover:bg-foreground/10 cursor-pointer transition-all duration-300 items-center gap-2">
+                <Globe className="size-6" />
+                <p className="line-clamp-1">VaayuMandal</p>
+              </div>
+            </Link>
 
             <Popover>
               <PopoverTrigger className="col-span-2">
@@ -270,10 +247,9 @@ const Navigation = () => {
             </Popover>
           </div>
           <div
-            onMouseDown={handleMouseDown}
-            onClick={resetWidth}
-            onDoubleClick={collapse}
-            className="opacity-0 group-hover/sidebar:opacity-100 transition-all cursor-ew-resize absolute h-full w-1 bg-primary/15 shadow-md right-0 top-0"
+            // onMouseDown={handleMouseDown}
+            onClick={collapse}
+            className="rounded-r-xl transition-all cursor-ew-resize absolute h-full w-2 shadow-md right-0 top-0"
           />
         </div>
       </aside>
@@ -281,9 +257,9 @@ const Navigation = () => {
       <div
         ref={navbarRef}
         className={cn(
-          "absolute top-0 left-80 z-[99999] w-[calc(100% - 320px)]",
+          "absolute top-0 left-0 z-[99999] w-[calc(100% - 560px)] p-4",
           isResetting && "transition-all ease-in-out duration-300",
-          isMobile && "left-0 w-full"
+          isMobile && "left-0 w-full px-4"
         )}
       >
         {!!params.documentId ? (

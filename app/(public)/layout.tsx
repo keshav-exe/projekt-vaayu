@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 
 const PublicLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
-      <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<Spinner />}>
+      <div className="min-h-screen justify-between flex flex-col">
         <Navbar />
         {children}
         <Footer />
-      </Suspense>
-    </div>
+      </div>
+    </Suspense>
   );
 };
 

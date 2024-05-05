@@ -40,7 +40,10 @@ const Navbar = ({ isCollapsed, onResetWidth, onCollapse }: NavbarProps) => {
   return (
     <>
       {document?.isArchived && <Banner documentId={document?._id} />}
-      <nav className="bg-background/60 backdrop-blur-sm shadow-md wrapper my-2 rounded-full border-2 border-primary/10 items-center flex gap-4">
+      <nav
+        className="top-0 left-0 bg-background/60 backdrop-blur-sm shadow-md max-w-7xl 2xl:max-w-[90rem] lg:mx-auto py-5 px-8 md:px-12 w-full;
+ my-2 rounded-full border-2 border-primary/10 items-center flex gap-4"
+      >
         <Button
           onClick={isCollapsed ? onResetWidth : onCollapse}
           role="button"

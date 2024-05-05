@@ -2,6 +2,7 @@
 
 const nextConfig = {
   images: {
+    unoptimized: true,
     domains: ["files.edgestore.dev", "utfs.io", "ap-south-1.graphassets.com"],
   },
 };

@@ -26,7 +26,7 @@ const Navbar = () => {
   const { user } = useUser();
 
   return (
-    <div className="sticky top-0 w-full z-[99999] border-b border-primary/10 backdrop-blur">
+    <div className="sticky top-0 left-0 w-full z-[99999] border-b border-primary/10 backdrop-blur">
       <div className="flex wrapper justify-between gap-4 ">
         <Link href="/" className="items-center font-bold text-primary text-2xl">
           <svg
@@ -76,10 +76,10 @@ const Navbar = () => {
           {!isAuthenticated && !isLoading && (
             <div className="flex gap-5">
               <Button variant={"outline"} className="h-10">
-                <SignInButton redirectUrl="/">Sign in</SignInButton>
+                <SignInButton redirectUrl="/kosh">Sign in</SignInButton>
               </Button>
               <Button variant={"default"} className="h-10">
-                <SignUpButton redirectUrl="/">Join for Free</SignUpButton>
+                <SignUpButton redirectUrl="/kosh">Join for Free</SignUpButton>
               </Button>
               <ThemeSwitch />
             </div>

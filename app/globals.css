@@ -56,7 +56,7 @@ body,
 
 @layer utilities {
   .wrapper {
-    @apply max-w-7xl lg:mx-auto py-5 px-5 md:px-12 w-full;
+    @apply max-w-7xl 2xl:max-w-[90rem] lg:mx-auto py-5 px-5 md:px-12 w-full;
   }
 
   .flex-center {

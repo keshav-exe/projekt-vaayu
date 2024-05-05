@@ -3,7 +3,7 @@ import Navbar from "@/components/navbar";
 
 const MarketingLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="min-h-full">
+    <main className="min-h-screen flex flex-col justify-between">
       <Navbar />
       {children}
       <Footer />

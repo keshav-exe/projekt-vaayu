@@ -41,6 +41,10 @@ const Page = () => {
         <h2 className="text-5xl font-bold text-center">
           Welcome to {user?.firstName}&apos;s VaayuKosh
         </h2>
+        <p className="text-lg text-center">
+          Confidently safeguard your thoughts, ideas, and personal writings with
+          VaayuKosh. Your lekhs are safe with you.
+        </p>
         <div>
           <Button
             onClick={onCreate}

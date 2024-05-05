@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col wrapper text-primary gap-3">
-        <div className="h-full my-[25vh] w-full bg-background flex flex-col flex-center overflow-hidden rounded-md">
+        <div className="h-[90vh] w-full bg-background flex flex-col flex-center overflow-hidden rounded-md">
           <motion.h1
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -20,7 +20,7 @@ export default function Home() {
               duration: 1,
               ease: [0.22, 0.5, 0.36, 1],
             }}
-            className="md:text-7xl text-5xl lg:text-9xl font-medium text-center text-primary relative z-20"
+            className="text-7xl lg:text-9xl font-medium text-center text-primary relative z-20"
           >
             Introducing Vaayu
           </motion.h1>
@@ -69,7 +69,7 @@ export default function Home() {
             initial={{ scale: 0.95, y: 20, opacity: 0 }}
             whileInView={{ scale: 1, y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: [0.22, 0.5, 0.36, 1] }}
-            viewport={{ margin: "-90px" }}
+            viewport={{ margin: "-70px" }}
           >
             <ContainerScroll
               titleComponent={
@@ -81,15 +81,6 @@ export default function Home() {
                       Your Personal Secure Vault.
                     </span>
                   </h1>
-                </>
-              }
-              footerComponent={
-                <>
-                  <p className="text-xl md:text-2xl text-center">
-                    With VaayuKosh, you can confidently safeguard your thoughts,
-                    ideas, and personal writings with top-notch security
-                    measures. Your notes are accessible only to you.
-                  </p>
                 </>
               }
             >
@@ -119,7 +110,7 @@ export default function Home() {
               duration: 0.5,
               ease: easeInOut,
             }}
-            viewport={{ margin: "-80px" }}
+            viewport={{ margin: "-70px" }}
             className="flex flex-center py-6 gap-4 sticky bottom-0"
           >
             {isAuthenticated ? (
@@ -143,7 +134,7 @@ export default function Home() {
             initial={{ scale: 0.95, y: 20, opacity: 0 }}
             whileInView={{ scale: 1, y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: [0.22, 0.5, 0.36, 1] }}
-            viewport={{ margin: "-90px" }}
+            viewport={{ margin: "-70px" }}
           >
             <ContainerScroll
               titleComponent={
@@ -156,13 +147,6 @@ export default function Home() {
                     </span>
                   </h1>
                 </>
-              }
-              footerComponent={
-                <p className="text-xl md:text-2xl text-center">
-                  Feel knowledge and ideas soar in VaayuMandal. It is the
-                  bustling heart of Projekt Vaayu, where writers, thinkers, and
-                  creators converge to exchange ideas.
-                </p>
               }
             >
               <Image
