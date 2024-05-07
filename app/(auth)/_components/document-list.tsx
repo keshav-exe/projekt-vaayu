@@ -66,24 +66,26 @@ const DocumentList = ({ parentDocumentId, level = 0 }: DocumentListProps) => {
       >
         Nothing found!
       </p>
-      {documents.map((document) => (
-        <div key={document._id} className="px-2 py-1 cursor-pointer">
-          <Item
-            id={document._id}
-            onClick={() => onRedirect(document._id)}
-            label={document.title}
-            icon={FileIcon}
-            documentIcon={document.icon}
-            active={params.documentId === document._id}
-            level={level}
-            onExpand={() => onExpand(document._id)}
-            expanded={expanded[document._id]}
-          />
-          {expanded[document._id] && (
-            <DocumentList parentDocumentId={document._id} level={level + 1} />
-          )}
-        </div>
-      ))}
+      {documents.map((document) =>
+        setTimeout(() => {
+          <div key={document._id} className="px-2 py-1 cursor-pointer">
+            <Item
+              id={document._id}
+              onClick={() => onRedirect(document._id)}
+              label={document.title}
+              icon={FileIcon}
+              documentIcon={document.icon}
+              active={params.documentId === document._id}
+              level={level}
+              onExpand={() => onExpand(document._id)}
+              expanded={expanded[document._id]}
+            />
+            {expanded[document._id] && (
+              <DocumentList parentDocumentId={document._id} level={level + 1} />
+            )}
+          </div>;
+        }, 600000)
+      )}
     </>
   );
 };

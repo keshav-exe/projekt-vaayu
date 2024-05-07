@@ -27,10 +27,12 @@ const Page = ({ params }: DocumentIdPageProps) => {
   const update = useMutation(api.documents.update);
 
   const onChange = (content: string) => {
-    update({
-      id: params.documentId,
-      content,
-    });
+    setTimeout(() => {
+      update({
+        id: params.documentId,
+        content,
+      });
+    }, 60000);
   };
 
   if (document === undefined) {

@@ -20,7 +20,7 @@ export default function Home() {
               duration: 1,
               ease: [0.22, 0.5, 0.36, 1],
             }}
-            className="text-7xl lg:text-9xl font-medium text-center text-primary relative z-20"
+            className="text-5xl md:text-7xl lg:text-9xl font-medium text-center text-primary relative z-20"
           >
             Introducing Vaayu
           </motion.h1>
